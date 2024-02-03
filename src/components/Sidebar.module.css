@@ -1,0 +1,4 @@
+.sidebar a{
+    color: var(--green-500);
+    text-decoration: none;
+}
