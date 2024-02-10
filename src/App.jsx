@@ -4,6 +4,7 @@ import { Sidebar } from './components/Sidebar.jsx';
 
 import styles from './App.module.css';
 import './global.css';
+import { Comment } from './components/Comment.jsx';
 
 
 export function App() {
