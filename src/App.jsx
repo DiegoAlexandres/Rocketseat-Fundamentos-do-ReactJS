@@ -4,8 +4,41 @@ import { Sidebar } from './components/Sidebar.jsx';
 
 import styles from './App.module.css';
 import './global.css';
-import { Comment } from './components/Comment.jsx';
 
+// author: { avatarUrl "", name: "", role: ""}
+// publishedAt: Date
+// content: String
+
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: 'https://github.com/diegoalexandres.png',
+      name: 'Diego Alexandre',
+      role: 'Desenvolvedor Full Stack',
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋'},
+      {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      {type: 'link', content: 'jane.design/doctorcare'},
+    ], 
+    publishedAt: new Date('2024-02-10 11:43:00')
+  },
+  {
+    id: 2,
+    author: {
+      avatarUrl: 'https://github.com/diego3g.png',
+      name: 'João Santana',
+      role: 'Desenvolvedor Front-End',
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋'},
+      {type: 'paragraph', content: ' Desenvolvedor Front-End. Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      {type: 'link', content: 'jane.design/doctorcare'},
+    ], 
+    publishedAt: new Date('2024-01-31 13:30:00')
+  },
+];
 
 export function App() {
   return (
@@ -16,22 +49,18 @@ export function App() {
         <Sidebar />
 
         <main>
-          <Post
-            author="Diego Alexandre"
-            content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi dolorem sunt eligendi rem repellat iure esse, delectus distinctio velit ea ratione eius dolore inventore officia ipsam ipsum suscipit nemo quasi!"
-          />
-          <Post
-            author="Alexandre"
-            content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi dolorem sunt eligendi rem repellat iure esse, delectus distinctio velit ea ratione eius dolore inventore officia ipsam ipsum suscipit nemo quasi!"
-          />
-          <Post
-            author="Alexandre"
-            content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi dolorem sunt eligendi rem repellat iure esse, delectus distinctio velit ea ratione eius dolore inventore officia ipsam ipsum suscipit nemo quasi!"
-          />
+          {posts.map(post =>{
+           return (
+            <Post 
+              author={post.author}
+              content={post.content}
+              publishedAt={post.publishedAt}
+            />
+            )
+          })}
         </main>
       </div>
 
     </div>
   )
 }
-
