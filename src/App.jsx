@@ -5,10 +5,6 @@ import { Sidebar } from './components/Sidebar.jsx';
 import styles from './App.module.css';
 import './global.css';
 
-// author: { avatarUrl "", name: "", role: ""}
-// publishedAt: Date
-// content: String
-
 const posts = [
   {
     id: 1,
@@ -51,7 +47,8 @@ export function App() {
         <main>
           {posts.map(post =>{
            return (
-            <Post 
+            <Post
+              key={post.id}
               author={post.author}
               content={post.content}
               publishedAt={post.publishedAt}

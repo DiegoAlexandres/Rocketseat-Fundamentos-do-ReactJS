@@ -68,7 +68,7 @@
 
 }
 
-.commentForm > strong{
+.commentForm strong{
     line-height: 1.6;
     color: var(--gray-100);
 }
@@ -83,6 +83,8 @@
     border-radius: 8px;
     color: var(--gray-100);
     line-height: 1.4;
+
+    margin-top: 1rem;
 }
 
 .commentForm footer {
@@ -108,8 +110,13 @@
 
 }
 
-.commentForm > button:hover{
+.commentForm button[type=submit]:not(:disabled):hover{
     background: var(--green-300);
+}
+
+.commentForm button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 .commentList{
